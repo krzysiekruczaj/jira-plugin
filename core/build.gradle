@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'org.jetbrains.intellij'
+apply plugin: 'kotlin'
+
+group 'it.ruczaj'
+version '1.0.0-DEV'
+
+intellij {
+    version '1.0.0-DEV'
+    pluginName 'JIRA Plugin'
+}
+
+repositories {
+    mavenCentral()
+}
