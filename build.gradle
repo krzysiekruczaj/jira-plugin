@@ -1,9 +1,13 @@
 buildscript {
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath "gradle.plugin.org.jetbrains.intellij.plugins:gradle-intellij-plugin:$intellijGradlePluginVersion"
     }
 }
 
@@ -14,7 +18,10 @@ group 'it.ruczaj'
 version '1.0.0-DEV'
 
 intellij {
-    version '1.0.0-DEV'
+    version "$ideaVersion"
+    downloadSources = true
+    updateSinceUntilBuild = false
+    instrumentCode = false
     pluginName 'JIRA Plugin'
 }
 
